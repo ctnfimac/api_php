@@ -1,0 +1,45 @@
+##############
+# Crear un contenedor para realizar un proyecto de php con mysql
+###############################
+
+1) con comandos
+    descargo la imagen de  php:7.4-apache:
+        docker pull php:7.4-apache
+    descargo la imagen de mysql
+        docker pull mysql:5.7
+
+
+    creo un contenedor mysql
+    docker run --name base_de_datos_mysql -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=test -v $PWD/data:/var/lib/mysql -d mysql:5.7
+
+    entro al contenedor y luego:
+    mysql --user=root --password=123456 test
+    //mysql --user=root --password=animales123456 animales
+    use test;
+    create table mascota(
+        id integer primary key not null,
+        nombre varchar(50) not null
+    );
+    INSERT INTO mascota values(1,'Zahira');
+    INSERT INTO mascota values(2,'Sasha');
+
+    creo el contenedor de apache y verifico si esta funcionando bien, para esto entro al servidor levantado
+        docker run -d --name servidor_apache -p 8082:80 php:7.4-apache
+    
+    quiero tener mi codigo compartiendo con el contenedor entonces creo una carpeta src/ con mi codigo .php
+    y creo otro contenedor (el anterior se puede eliminar)
+        docker run --name servidor_apache -p 8082:80 -d -v $PWD/src:/var/www/html --link base_de_datos_mysql php:7.4-apache
+
+    tengo que instalar mysqli en el contenedor de apache
+    
+2) con dockercompose
+  a) crear para que levante un contenedor de mysql 
+        que cree la base de datos, una tabla e inserte unos datos (Resuelto)
+        a2) instalar el driver para mysqli (ok)
+  b) crear servicio para que levante el apache y pueda tener el codigo actualizado tanto
+     en mi pc como en el contenedor (con un volumen) (ok)
+
+
+##############
+# Conectar la base de datos mediante poo
+###############################

@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+    servidor:
+        container_name: servidor_apiphp
+        # image: php:7.4-apache
+        build: ./servidor
+            # context: '.'
+            # dockerfile: './servidor/Dockerfile'
+        ports:
+            - "8082:80"
+        volumes:
+            - "./src:/var/www/html"
+        links:
+            - db
+        depends_on:
+            - db
+    
+    db:
+        image: mysql:5.7
+        container_name: mysql_db_apiphp
+        ports:
+            - "3306:3306"
+        volumes:
+            - "./datamysql:/var/lib/mysql"
+            - "./db/init:/docker-entrypoint-initdb.d"
+        env_file: "./db/commons.env"
+
+# fue importante el link para que se comuniquen los servicios
