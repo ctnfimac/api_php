@@ -25,6 +25,13 @@ class ApiController{
 					$this->respuesta = $mascota_model->borrar($_GET['id']);
 				break;
 			
+			case 'PUT':
+				if(isset($_GET['id'])){
+					$info = json_decode(file_get_contents('php://input'), true);
+					$this->respuesta = $mascota_model->modificar($_GET['id'], $info);
+				}
+				break;
+
 			break;
 		}
 		

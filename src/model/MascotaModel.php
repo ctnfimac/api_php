@@ -41,7 +41,10 @@ class MascotaModel extends Conexion{
     }
 
 	public function modificar($id, $registro){
-
+		$nombre = $registro['nombre'];
+		$this->query = "UPDATE mascota SET nombre = '$nombre' WHERE id = '$id'";
+		$this->set_query();
+		return json_encode(['data' => array('nombre' => $nombre)]);
     }
 
 	public function convertirAJson($tabla){
