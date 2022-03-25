@@ -1,5 +1,4 @@
 <?php
-
 header("Content-Type: application/json");
 
 class ApiController{
@@ -8,25 +7,14 @@ class ApiController{
 
 	public function __construct($route){
 
+		$mascota_model = new MascotaModel();
+
 		switch($_SERVER['REQUEST_METHOD']){
-           
 			case 'GET':
-				// TODO: sino no hay el parametro controlador retorno un mensaje de error
-				// TODO: importo el controlador conrrespondiente
-				// $controlador = eval('new MascotaController();');//eval('new ' . ucfirst($_GET['controller']) . 'Controller()');
-				$mascota_model = new MascotaModel();
-				if(isset($_GET['id'])) {
-					// TODO: utilizo el metodo que trae la mascota correspondiente
-
-					// TODO: lo codifico a json
-				}else{
-                    $mascotas = $mascota_model->listarTodo();
-					$this->respuesta = $mascota_model->convertirJson($mascotas);
-                }
+				$mascotas = isset($_GET['id']) ? $mascota_model->obtenerRegistro($_GET['id']) : $mascota_model->listarTodo();
+				$this->respuesta = $mascota_model->convertirAJson($mascotas);
 			break;
-
 		}
-
         echo $this->respuesta;
 	}
 	
