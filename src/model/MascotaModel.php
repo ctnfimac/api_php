@@ -1,4 +1,5 @@
 <?php
+header("Content-Type: application/json");
 
 // require_once('clases/Mascota.php');
 
@@ -17,19 +18,28 @@ class MascotaModel extends Conexion{
 		return $matriz;
     }
 
-	public function obtenerRegistro(){
+	public function obtenerRegistro($id){
 
 	}
 
-    public function guardar(){
+    public function guardar($registro){
 
     }
 
-	public function borrar(){
+	public function borrar($id){
 
     }
 
-	public function modificar(){
+	public function modificar($id, $registro){
 
     }
+
+	public function convertirJson($tabla){
+		$respuesta = ['data' =>[]];
+		// armo el array para poder convertirlo a json
+		foreach($tabla as $mascota){
+			array_push($respuesta['data'],array('id' => $mascota->getId(), 'nombre'=> $mascota->getNombre()));
+		}
+		return json_encode($respuesta);
+	}
 }

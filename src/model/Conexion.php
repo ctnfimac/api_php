@@ -11,10 +11,10 @@ abstract class Conexion{
 	protected $rows = array();
 
 	abstract protected function listarTodo();
-	abstract protected function obtenerRegistro();
-	abstract protected function guardar();
-	abstract protected function borrar();
-	abstract protected function modificar();
+	abstract protected function obtenerRegistro($id);
+	abstract protected function guardar($registro);
+	abstract protected function borrar($id);
+	abstract protected function modificar($id,$registro);
 
 	private function db_open(){
 		$this->conn = new mysqli(
