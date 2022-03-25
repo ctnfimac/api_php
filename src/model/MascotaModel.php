@@ -20,7 +20,10 @@ class MascotaModel extends Conexion{
 	}
 
     public function guardar($registro){
-
+		$nombre = $registro['nombre'];
+		$this->query = "INSERT INTO mascota(nombre) VALUES ('$nombre');";
+		$this->set_query();
+		return json_encode(['data' => array('nombre' => $nombre)]);
     }
 
 	public function borrar($id){

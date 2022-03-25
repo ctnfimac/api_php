@@ -3,11 +3,12 @@ create database animales;
 use animales;
 
 create table mascota(
-    id integer primary key not null,
-    nombre varchar(50) not null
+    id int NOT NULL AUTO_INCREMENT,
+    nombre varchar(50) not null,
+    PRIMARY KEY (id)
 );
 
-INSERT INTO mascota values(1, 'Zahira');
-INSERT INTO mascota values(2, 'Sasha');
-INSERT INTO mascota values(3, 'Tokepi');
-INSERT INTO mascota values(4, 'Illidan');
+INSERT INTO mascota(nombre) values('Zahira');
+INSERT INTO mascota(nombre) values('Sasha');
+INSERT INTO mascota(nombre) values('Tokepi');
+INSERT INTO mascota(nombre) values('Illidan');

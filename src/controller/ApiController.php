@@ -14,7 +14,13 @@ class ApiController{
 				$mascotas = isset($_GET['id']) ? $mascota_model->obtenerRegistro($_GET['id']) : $mascota_model->listarTodo();
 				$this->respuesta = $mascota_model->convertirAJson($mascotas);
 			break;
+
+			case 'POST':
+				$info = json_decode(file_get_contents('php://input'), true);
+				$this->respuesta = $mascota_model->guardar($info);
+			break;
 		}
+		
         echo $this->respuesta;
 	}
 	
