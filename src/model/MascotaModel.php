@@ -27,7 +27,17 @@ class MascotaModel extends Conexion{
     }
 
 	public function borrar($id){
+		// echo $id;
+		$mascota_a_borrar = $this->obtenerRegistro($id);
+		$mascota_a_borrar = $this->convertirAJson($mascota_a_borrar);
+		if($this->contador){
+			$this->query = "DELETE FROM mascota WHERE id = {$id}";
+			$this->set_query();
+			return $mascota_a_borrar;
+		}else{
 
+		}
+		return json_encode(array('Error' => "No existe la mascota con id {$id}"));
     }
 
 	public function modificar($id, $registro){

@@ -13,11 +13,18 @@ class ApiController{
 			case 'GET':
 				$mascotas = isset($_GET['id']) ? $mascota_model->obtenerRegistro($_GET['id']) : $mascota_model->listarTodo();
 				$this->respuesta = $mascota_model->convertirAJson($mascotas);
-			break;
+				break;
 
 			case 'POST':
 				$info = json_decode(file_get_contents('php://input'), true);
 				$this->respuesta = $mascota_model->guardar($info);
+				break;
+
+			case 'DELETE':
+				if(isset($_GET['id'])) 
+					$this->respuesta = $mascota_model->borrar($_GET['id']);
+				break;
+			
 			break;
 		}
 		
