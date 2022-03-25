@@ -1,10 +1,10 @@
 <?php
 
-require_once('clases/Mascota.php');
+// require_once('clases/Mascota.php');
 
 class MascotaModel extends Conexion{
 
-    public function traerTodo(){
+    public function listarTodo(){
         $matriz = array();
 		$contador = 0;
 		$this->query = "SELECT id, nombre FROM mascota";
@@ -17,15 +17,19 @@ class MascotaModel extends Conexion{
 		return $matriz;
     }
 
-    protected function alta(){
+	public function obtenerRegistro(){
+
+	}
+
+    public function guardar(){
 
     }
 
-	protected function baja(){
+	public function borrar(){
 
     }
 
-	protected function modificacion(){
+	public function modificar(){
 
     }
 }
