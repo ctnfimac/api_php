@@ -4,7 +4,7 @@ abstract class Conexion{
 	private static $db_host = 'mysql_db_apiphp:3306';
 	private static $db_user = 'root';
 	private static $db_pass = 'animales#';
-	private static $db_name = 'animales';
+	private static $db_name = 'ctn_web';
 	private static $db_charset = 'utf8';
 	private $conn;
 	protected $query;

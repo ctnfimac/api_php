@@ -87,3 +87,8 @@ CREATE TABLE red_social(
     web_url VARCHAR(255),
     PRIMARY KEY(id)
 );
+
+
+INSERT INTO mascota(nombre) values('Zahira');
+INSERT INTO banner(titulo,subtitulo,boton_text)
+VALUES('DISEÑO Y DESARROLLO DE SITIOS WEB','¿Estás buscando rediseñar tú página web o hacer una desde cero?','Mirar precios y categorias');

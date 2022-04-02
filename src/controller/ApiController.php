@@ -7,28 +7,28 @@ class ApiController{
 
 	public function __construct($route){
 
-		$mascota_model = new MascotaModel();
+		$modelo = $this->modelSeleccionado($_GET['model']); 
 
 		switch($_SERVER['REQUEST_METHOD']){
 			case 'GET':
-				$mascotas = isset($_GET['id']) ? $mascota_model->obtenerRegistro($_GET['id']) : $mascota_model->listarTodo();
-				$this->respuesta = $mascota_model->convertirAJson($mascotas);
+				$registros = isset($_GET['id']) ? $modelo->obtenerRegistro($_GET['id']) : $modelo->listarTodo();
+				$this->respuesta = $modelo->convertirAJson($registros);
 				break;
 
 			case 'POST':
 				$info = json_decode(file_get_contents('php://input'), true);
-				$this->respuesta = $mascota_model->guardar($info);
+				$this->respuesta = $modelo->guardar($info);
 				break;
 
 			case 'DELETE':
 				if(isset($_GET['id'])) 
-					$this->respuesta = $mascota_model->borrar($_GET['id']);
+					$this->respuesta = $modelo->borrar($_GET['id']);
 				break;
 			
 			case 'PUT':
 				if(isset($_GET['id'])){
 					$info = json_decode(file_get_contents('php://input'), true);
-					$this->respuesta = $mascota_model->modificar($_GET['id'], $info);
+					$this->respuesta = $modelo->modificar($_GET['id'], $info);
 				}
 				break;
 
@@ -39,6 +39,16 @@ class ApiController{
 	}
 	
 	
-	private function route($route,$usuario){
+	private function modelSeleccionado($model){
+		$modelo = null;
+		switch ($model) {
+			case 'banner':
+				$modelo = new BannerModel();
+				break;
+				
+			default:
+				break;
+		}
+		return $modelo;
 	}
 }
