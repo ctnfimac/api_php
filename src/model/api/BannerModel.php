@@ -15,39 +15,44 @@ class BannerModel extends Conexion{
     }
 
 	public function obtenerRegistro($id){
-		// $this->query = "SELECT id, nombre FROM mascota WHERE id = {$id}";
-		// $tabla = $this->get_query();
-		// return($this->consultaAArrayDeObjetos($tabla));
+		$ati = Banner::getFields();
+		$campos = implode($ati,",");
+		$this->query = "SELECT $campos FROM banner WHERE id = {$id}";
+		$tabla = $this->get_query();
+		return($this->consultaAArrayDeObjetos($tabla));
 	}
 
     public function guardar($registro){
-		// $nombre = $registro['nombre'];
-		// $this->query = "INSERT INTO mascota(nombre) VALUES ('$nombre');";
-		// $this->set_query();
-		// return json_encode(['data' => array('nombre' => $nombre)]);
+		$titulo = $registro['titulo'];
+		$subtitulo = $registro['subtitulo'];
+		$boton_text = $registro['boton_text'];
+		//TODO: tengo que verificar que haya un solo registro
+		$this->query = "INSERT INTO banner(titulo, subtitulo, boton_text) VALUES ('$titulo','$subtitulo','$boton_text');";
+		$this->set_query();
+		return json_encode(['data' => array('titulo' => $titulo, 'subtitulo' => $subtitulo, 'boton_text' => $boton_text)]);
     }
 
 	public function borrar($id){
-		// // echo $id;
-		// $mascota_a_borrar = $this->obtenerRegistro($id);
-		// $mascota_a_borrar = $this->convertirAJson($mascota_a_borrar);
-		// if($this->contador){
-		// 	$this->query = "DELETE FROM mascota WHERE id = {$id}";
-		// 	$this->set_query();
-		// 	return $mascota_a_borrar;
-		// }else{
+		$dato_a_borrar = $this->obtenerRegistro($id);
+		$dato_a_borrar = $this->convertirAJson($dato_a_borrar);
+		if($this->contador){
+			$this->query = "DELETE FROM banner WHERE id = {$id}";
+			$this->set_query();
+			return $dato_a_borrar;
+		}else{
 
-		// }
-		// return json_encode(array('Error' => "No existe la mascota con id {$id}"));
+		}
+		return json_encode(array('Error' => "No existe el Registro con id {$id}"));
     }
 
 	public function modificar($id, $registro){
-		// $nombre = $registro['nombre'];
-		// $this->query = "UPDATE mascota SET nombre = '$nombre' WHERE id = '$id'";
-		// $this->set_query();
-		// return json_encode(['data' => array('nombre' => $nombre)]);
+		$titulo = $registro['titulo'];
+		$subtitulo = $registro['subtitulo'];
+		$boton_text = $registro['boton_text']; // TODO: problemas con el boton_text
+		$this->query = "UPDATE banner SET titulo = '$titulo', subtitulo = '$subtitulo', boton_text = '$boton_text' WHERE id = '$id'";
+		$this->set_query();
+		return json_encode(['data' => array('titulo' => $titulo, 'subtitulo' => $subtitulo, 'boton_text' => $boton_text)]);
     }
-
 
 	private function consultaAArrayDeObjetos($tabla){
 		while($fila = $tabla->fetch_assoc()){
