@@ -45,6 +45,10 @@ class ApiController{
 			case 'banner':
 				$modelo = new BannerModel();
 				break;
+			
+			case 'servicio':
+				$modelo = new ServicioModel();
+				break;
 				
 			default:
 				break;
