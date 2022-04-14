@@ -3,33 +3,48 @@
 class Model extends Conexion{
     private $matriz = array();
     private $contador = 0;
+	private $campos;
     private $campos_str;
     private $modelo;
     private $tabla;
 
     function __construct($modelo){
-        $campos = $modelo::getFields();
-		$this->campos_str = implode($campos,",");
+        $this->campos = $modelo::getFields();
+		$this->campos_str = implode($this->campos,",");
         $this->tabla = strtolower($modelo);
         $this->modelo = $modelo;
     }
 
     public function listarTodo(){
-		$this->query = "SELECT $this->campos_str FROM $this->tabla";
-		$tabla = $this->get_query();
-		return($this->consultaAArrayDeObjetos($tabla));
+        $this->query = "SELECT $this->campos_str FROM $this->tabla";
+        $tabla = $this->get_query();
+        return($this->consultaAArrayDeObjetos($tabla));
     }
 
     public function obtenerRegistro($id){
-		$this->query = "SELECT $this->campos_str FROM $this->tabla WHERE id = {$id}";
-		$tabla = $this->get_query();
-		return($this->consultaAArrayDeObjetos($tabla));
-	}
+        $this->query = "SELECT $this->campos_str FROM $this->tabla WHERE id = {$id}";
+        $tabla = $this->get_query();
+        return($this->consultaAArrayDeObjetos($tabla));
+    }
 
-	public function guardar($registro){}
+	public function guardar($registro){		
+		$titulo = $registro['titulo'];
+		$descripcion = $registro['descripcion'];
+		$icono = $registro['icono'];
+		/*TODO: tengo que verificar que haya un solo registro*/
+		$campos_update = ltrim($this->campos_str, 'id,');//Elimino el campo id para el update
+		$values = "";
+		foreach ($registro as $campo) {
+			$values = $values . "'$campo'" . ',';
+		}
+		$values = substr($values,0,-1); // elimino la ultima coma
+		$this->query = "INSERT INTO $this->tabla ($campos_update) VALUES ($values);";
+		$this->set_query();
+		return json_encode(['data' => $registro]);
+	}
 	
 
-    public function borrar($id){
+	public function borrar($id){
 		$dato_a_borrar = $this->obtenerRegistro($id);
 		$dato_a_borrar = $this->convertirAJson($dato_a_borrar);
 		if($this->contador){
@@ -38,7 +53,7 @@ class Model extends Conexion{
 			return $dato_a_borrar;
 		}
 		return json_encode(array('Error' => "No existe el Registro con id {$id}"));
-    }
+	}
 
 
 	public function modificar($id,$registro){}
