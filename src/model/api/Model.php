@@ -86,6 +86,9 @@ class Model extends Conexion{
                  case 'Tecnologia':
                      $objeto = new Tecnologia($fila['id'],$fila['nombre'],$fila['porcentaje']);
                     break;
+                 case 'Categoria':
+                     $objeto = new Categoria($fila['id'],$fila['titulo'],$fila['precio'],$fila['responsive'],$fila['red_social'],$fila['formulario'],$fila['imagenes'],$fila['secciones']);
+                    break;
                  case 'Contacto':
                      $objeto = new Contacto($fila['id'],$fila['descripcion'],$fila['icono']);
                     break;
@@ -121,6 +124,12 @@ class Model extends Conexion{
                     break;
                  case 'Tecnologia':
 			        array_push($respuesta['data'],array('id' => $row->getId(), 'nombre'=> $row->getNombre(),'porcentaje'=> $row->getPorcentaje()));
+                    break;
+                 case 'Categoria':
+			        array_push($respuesta['data'],array('id' => $row->getId(), 'titulo'=> $row->getTitulo(),
+                        'precio'=> $row->getPrecio(),'responsive'=> $row->getResponsive(),'red_social'=> $row->getRedSocial(),
+                        'formulario'=> $row->getFormulario(),'imagenes'=> $row->getImagenes(),'secciones'=> $row->getSecciones(),
+                    ));
                     break;
                  case 'Contacto':
 			        array_push($respuesta['data'],array('id' => $row->getId(), 'descripcion'=> $row->getDescripcion(),'icono'=> $row->getIcono()));
