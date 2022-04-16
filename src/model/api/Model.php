@@ -89,6 +89,9 @@ class Model extends Conexion{
                  case 'Contacto':
                      $objeto = new Contacto($fila['id'],$fila['descripcion'],$fila['icono']);
                     break;
+                 case 'Redsocial':
+                     $objeto = new Redsocial($fila['id'],$fila['titulo'],$fila['icono'],$fila['web_url']);
+                    break;
                  default:
                     echo 'Modelo inexistente';
                     break;
@@ -121,6 +124,9 @@ class Model extends Conexion{
                     break;
                  case 'Contacto':
 			        array_push($respuesta['data'],array('id' => $row->getId(), 'descripcion'=> $row->getDescripcion(),'icono'=> $row->getIcono()));
+                    break;
+                 case 'Redsocial':
+			        array_push($respuesta['data'],array('id' => $row->getId(), 'titulo'=> $row->getTitulo(),'icono'=> $row->getIcono(),'web_url'=> $row->getWebUrl()));
                     break;
                  default:
                     echo 'Error al convertir en Json';

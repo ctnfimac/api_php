@@ -80,7 +80,7 @@ CREATE TABLE contacto(
     PRIMARY KEY(id)
 );
 
-CREATE TABLE red_social(
+CREATE TABLE redsocial(
     id INT NOT NULL AUTO_INCREMENT,
     titulo VARCHAR(50) NOT NULL UNIQUE,
     icono VARCHAR(255) NOT NULL,
