@@ -77,6 +77,9 @@ class Model extends Conexion{
                  case 'Articulo':
                      $objeto = new Articulo($fila['id'],$fila['titulo'],$fila['imagen_url']);
                     break;
+                 case 'Portfolio':
+                     $objeto = new Portfolio($fila['id'],$fila['titulo'],$fila['descripcion'],$fila['imagen_url'],$fila['web_url']);
+                    break;
                  default:
                     echo 'Modelo inexistente';
                     break;
@@ -100,6 +103,9 @@ class Model extends Conexion{
                     break;
                  case 'Articulo':
 			        array_push($respuesta['data'],array('id' => $row->getId(), 'titulo'=> $row->getTitulo(),'imagen_url'=> $row->getImagenUrl()));
+                    break;
+                 case 'Portfolio':
+			        array_push($respuesta['data'],array('id' => $row->getId(), 'titulo'=> $row->getTitulo(),'descripcion'=> $row->getDescripcion(),'imagen_url'=> $row->getImagenUrl(),'web_url'=> $row->getWebUrl()));
                     break;
                  default:
                     echo 'Error al convertir en Json';
