@@ -7,7 +7,7 @@ class ApiController{
 
 	public function __construct($route){
 
-		$modelo = $this->modelSeleccionado($_GET['model']); 
+		$modelo = new Model(ucwords($_GET['model']));
 
 		switch($_SERVER['REQUEST_METHOD']){
 			case 'GET':
@@ -38,21 +38,5 @@ class ApiController{
         echo $this->respuesta;
 	}
 	
-	
-	private function modelSeleccionado($model){
-		$modelo = null;
-		switch ($model) {
-			case 'banner':
-				$modelo = new BannerModel();
-				break;
-			
-			case 'servicio':
-				$modelo = new ServicioModel();
-				break;
-				
-			default:
-				break;
-		}
-		return $modelo;
-	}
+
 }

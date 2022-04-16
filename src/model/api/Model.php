@@ -60,7 +60,7 @@ class Model extends Conexion{
 			$set_query = $set_query . "$campo = '$valor'" . ',';
 		}
 		$set_query = substr($set_query,0,-1);
-		$this->query = "UPDATE servicio SET $set_query WHERE id = '$id'";
+		$this->query = "UPDATE $this->tabla SET $set_query WHERE id = '$id'";
 		$this->set_query();
         return json_encode(['data' => $registro]);
     }
@@ -73,6 +73,9 @@ class Model extends Conexion{
                     break;
                  case 'Banner':
                      $objeto = new Banner($fila['id'],$fila['titulo'],$fila['subtitulo'],$fila['boton_text']);
+                    break;
+                 case 'Articulo':
+                     $objeto = new Articulo($fila['id'],$fila['titulo'],$fila['imagen_url']);
                     break;
                  default:
                     echo 'Modelo inexistente';
@@ -94,6 +97,9 @@ class Model extends Conexion{
                     break;
                  case 'Banner':
 			        array_push($respuesta['data'],array('id' => $row->getId(), 'titulo'=> $row->getTitulo(),'subtitulo'=> $row->getSubtitulo(),'boton_text'=> $row->getBotonText()));
+                    break;
+                 case 'Articulo':
+			        array_push($respuesta['data'],array('id' => $row->getId(), 'titulo'=> $row->getTitulo(),'imagen_url'=> $row->getImagenUrl()));
                     break;
                  default:
                     echo 'Error al convertir en Json';

@@ -27,8 +27,21 @@ class Articulo{
         $this->titulo = $titulo;
     }
 
-    public function setImagenUrl$imagen_url){
+    public function setImagenUrl($imagen_url){
         $this->imagen_url = $imagen_url;
+    }
+
+    public static function getFields(){
+        return self::_getFields(__CLASS__);
+    }
+  
+    final protected static function _getFields($className){
+        $rtn = array();
+        $vars_clase = array_keys(get_class_vars($className)) ;
+		foreach ($vars_clase as $valor) {
+            $rtn[] =  $valor; 
+		}
+        return $rtn;
     }
     
 }
