@@ -29,8 +29,11 @@ class Model extends Conexion{
 
 	public function guardar($registro){		
 		/*TODO: tengo que verificar que haya un solo registro*/
-		$campos_update = ltrim($this->campos_str, 'id,');//Elimino el campo id para el update
-		$values = "";
+        // por algun motivo para la clase Contacto $campos_update quedaba como escripcion,icono
+        // por eso le tuve que hacer un substr y en el ltrim solo eliminar el id y no id,
+        $campos_update = ltrim($this->campos_str, "id");//Elimino el campo id para el update
+        $campos_update = substr($campos_update,1);
+        $values = "";
 		foreach ($registro as $campo) {
 			$values = $values . "'$campo'" . ',';
 		}
@@ -83,6 +86,9 @@ class Model extends Conexion{
                  case 'Tecnologia':
                      $objeto = new Tecnologia($fila['id'],$fila['nombre'],$fila['porcentaje']);
                     break;
+                 case 'Contacto':
+                     $objeto = new Contacto($fila['id'],$fila['descripcion'],$fila['icono']);
+                    break;
                  default:
                     echo 'Modelo inexistente';
                     break;
@@ -112,6 +118,9 @@ class Model extends Conexion{
                     break;
                  case 'Tecnologia':
 			        array_push($respuesta['data'],array('id' => $row->getId(), 'nombre'=> $row->getNombre(),'porcentaje'=> $row->getPorcentaje()));
+                    break;
+                 case 'Contacto':
+			        array_push($respuesta['data'],array('id' => $row->getId(), 'descripcion'=> $row->getDescripcion(),'icono'=> $row->getIcono()));
                     break;
                  default:
                     echo 'Error al convertir en Json';
