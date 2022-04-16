@@ -28,9 +28,6 @@ class Model extends Conexion{
     }
 
 	public function guardar($registro){		
-		$titulo = $registro['titulo'];
-		$descripcion = $registro['descripcion'];
-		$icono = $registro['icono'];
 		/*TODO: tengo que verificar que haya un solo registro*/
 		$campos_update = ltrim($this->campos_str, 'id,');//Elimino el campo id para el update
 		$values = "";
@@ -56,7 +53,17 @@ class Model extends Conexion{
 	}
 
 
-	public function modificar($id,$registro){}
+    public function modificar($id, $registro){
+        $campos_update = ltrim($this->campos_str, 'id,');//Elimino el campo id para el update
+		$set_query = "";
+		foreach ($registro as $campo => $valor) {
+			$set_query = $set_query . "$campo = '$valor'" . ',';
+		}
+		$set_query = substr($set_query,0,-1);
+		$this->query = "UPDATE servicio SET $set_query WHERE id = '$id'";
+		$this->set_query();
+        return json_encode(['data' => $registro]);
+    }
 
     private function consultaAArrayDeObjetos($tabla){
 		while($fila = $tabla->fetch_assoc()){
