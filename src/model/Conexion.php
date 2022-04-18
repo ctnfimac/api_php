@@ -23,7 +23,8 @@ abstract class Conexion{
 			self::$db_pass,
 			self::$db_name
 		);
-		// $this->conn->set_charset(self::$db_charset);
+		// descomentar para producción
+		// $this->conn->set_charset(self::$db_charset); 
 	}
 
 	private function db_close(){
