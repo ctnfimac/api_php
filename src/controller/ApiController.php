@@ -1,5 +1,7 @@
 <?php
 header("Content-Type: application/json");
+// header('Content-type: application/json; charset=utf8');
+
 
 class ApiController{
 	private $route = 'api';

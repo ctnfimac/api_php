@@ -1,21 +1,5 @@
-create database animales;
-
-use animales;
-
-create table mascota(
-    id int NOT NULL AUTO_INCREMENT,
-    nombre varchar(50) not null,
-    PRIMARY KEY (id)
-);
-
-INSERT INTO mascota(nombre) values('Zahira');
-INSERT INTO mascota(nombre) values('Sasha');
-INSERT INTO mascota(nombre) values('Tokepi');
-INSERT INTO mascota(nombre) values('Illidan');
-
-
-/**/
-CREATE DATABASE ctn_web;
+-- CREATE DATABASE ctn_web CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+CREATE DATABASE ctn_web CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 USE ctn_web;
 
@@ -29,7 +13,7 @@ CREATE TABLE banner(
 
 CREATE TABLE servicio(
     id INT NOT NULL AUTO_INCREMENT,
-    titulo VARCHAR(25) NOT NULL,
+    titulo VARCHAR(30) NOT NULL,
     descripcion TINYTEXT NOT NULL,
     icono VARCHAR(255) NOT NULL,
     PRIMARY KEY(id)
@@ -68,7 +52,7 @@ CREATE TABLE categoria(
     formulario VARCHAR(1) NOT NULL DEFAULT 'f',
     imagenes TINYINT NOT NULL DEFAULT 12,
     secciones TINYINT NOT NULL DEFAULT 2,
-    mails TINYINT NOT NULL DEFAULT 2,
+    -- mails TINYINT NOT NULL DEFAULT 2,
     PRIMARY KEY(id)
 );
 
@@ -89,6 +73,50 @@ CREATE TABLE redsocial(
 );
 
 
-INSERT INTO mascota(nombre) values('Zahira');
 INSERT INTO banner(titulo,subtitulo,boton_text)
 VALUES('DISEÑO Y DESARROLLO DE SITIOS WEB','¿Estás buscando rediseñar tú página web o hacer una desde cero?','Mirar precios y categorias');
+
+INSERT INTO servicio(titulo,descripcion,icono)
+VALUES('Diseño Web','Diseño y Maqueto el sitio web que necesitas, con las tecnologías que mejor se acoplen a tu proyecto, adaptados a todos los dispositivos.','icon-disenio'),
+('Dominios','Registro de dominios .com / .com.ar / .org y otros más','icon-www'),
+('Paneles de Administración','Desarrollo Paneles de Administración para que con un simple usuario y contraseña puedas modificar diversos contenidos de tu sitio Web.','icon-panel'),
+('Hosting','Distintos servicios de hosting que se adaptan a las necesidades de tu proyecto, permitiendo almacenar información, imágenes, videos o cualquier contenido accesible via web','icon-dominio');
+
+
+INSERT INTO articulo(titulo, imagen_url)
+VALUES('Sitios Web Adaptables a Todos los Dispositivos','img/home/adaptable_imagen.png');
+
+INSERT INTO portfolio(titulo, descripcion, imagen_url, web_url)
+VALUES('NO VIOLENCIA BS','Fundación de la no violencia en buenos aires','img/portfolio/1.jpg','http://noviolenciabuenosaires.christianperalta.com'),
+('RPSCONSULTORA','Estudio profesional de Contadores','img/portfolio/2.jpg','http://rpsconsultora.com.ar/'),
+('UNION LOGISTIC','Maquetación realizada para claseAcreativos','img/portfolio/6.jpg','http://unionlogistic.com.ar/'),
+('CONAUT','Proyecto realizado en la unLam','img/portfolio/3.jpg','http://christianperalta.com/bootstrap_conaut/'),
+('SIPRO','Empresa dedicada al desarrollo de productos de higiene institucional','img/portfolio/4.jpg','http://sipro.com.ar/');
+
+INSERT INTO tecnologia(nombre, porcentaje)
+VALUES('html',85),
+('css',90),
+('javascript',75),
+('bootstrap',70),
+('mysql',60),
+('java',80),
+('php',70),
+('spring',65),
+('hibernate',65);
+
+INSERT INTO categoria(titulo, precio, responsive, red_social, formulario, imagenes, secciones)
+VALUES ('Básica', 150, 't', 't', 't', 12, 2),
+('Media', 150, 't', 't', 't', 26, 3),
+('Avanzada', 150, 't', 't', 't', 40, 5),
+('Diseño Personalizado', 0, 't', 't', 't', 100, 0);
+
+
+INSERT INTO contacto(descripcion, icono)
+VALUES('info@christianperalta.com','icon-correo'),
+('Buenos Aires, Argentina','icon-ubicacion'),
+('1561870920','icon-whatsapp');
+
+
+INSERT INTO redsocial(titulo, icono, web_url)
+VALUES('linkedin', 'icon-linkedin','https://www.linkedin.com/in/christianperalta87'),
+('github','icon-github','https://github.com/ctnfimac');
