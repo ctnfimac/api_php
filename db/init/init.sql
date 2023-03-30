@@ -120,3 +120,31 @@ VALUES('info@christianperalta.com','icon-correo'),
 INSERT INTO redsocial(titulo, icono, web_url)
 VALUES('linkedin', 'icon-linkedin','https://www.linkedin.com/in/christianperalta87'),
 ('github','icon-github','https://github.com/ctnfimac');
+
+
+
+-- Para la api de transporte
+CREATE TABLE usuario
+(
+    id integer NOT NULL,
+    nombre character varying(50),
+    direccion character varying(250),
+    latitud double precision,
+    longitud double precision
+);
+
+CREATE TABLE administrador
+(
+    id SERIAL PRIMARY KEY,
+    nombre character varying(50),
+    contraseña character varying(50)
+);
+
+ALTER TABLE usuario ADD COLUMN barrio varchar(50);
+ALTER TABLE usuario ADD COLUMN comuna varchar(50);
+
+
+INSERT INTO administrador(nombre, contraseña)
+VALUES('Christian', '123456');
+
+ALTER TABLE usuario MODIFY id INTEGER PRIMARY KEY AUTO_INCREMENT;

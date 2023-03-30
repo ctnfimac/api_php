@@ -39,6 +39,7 @@ class Model extends Conexion{
 		}
 		$values = substr($values,0,-1); // elimino la ultima coma
 		$this->query = "INSERT INTO $this->tabla ($campos_update) VALUES ($values);";
+        // echo $this->query;
 		$this->set_query();
 		return json_encode(['data' => $registro]);
 	}
@@ -95,6 +96,9 @@ class Model extends Conexion{
                  case 'Redsocial':
                      $objeto = new Redsocial($fila['id'],$fila['titulo'],$fila['icono'],$fila['web_url']);
                     break;
+                 case 'Usuario':
+                     $objeto = new Usuario($fila['id'],$fila['nombre'],$fila['direccion'],$fila['latitud'],$fila['longitud'],$fila['barrio'],$fila['comuna']);
+                    break;
                  default:
                     echo 'Modelo inexistente';
                     break;
@@ -136,6 +140,9 @@ class Model extends Conexion{
                     break;
                  case 'Redsocial':
 			        array_push($respuesta['data'],array('id' => $row->getId(), 'titulo'=> $row->getTitulo(),'icono'=> $row->getIcono(),'web_url'=> $row->getWebUrl()));
+                    break;
+                 case 'Usuario':
+			        array_push($respuesta['data'],array('id' => $row->getId(), 'nombre'=> $row->getNombre(),'direccion'=> $row->getDireccion(),'latitud'=> $row->getLatitud(),'longitud'=> $row->getLongitud(),'barrio'=> $row->getBarrio(),'comuna'=> $row->getComuna()));
                     break;
                  default:
                     echo 'Error al convertir en Json';
