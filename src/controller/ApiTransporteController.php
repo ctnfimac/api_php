@@ -97,10 +97,10 @@ class ApiTransporteController{
 				$resultado = $servicioTrasporte->usuarios_por_comuna();
 				break;
 
-			// case 'login_de_usuario':
-			// 	$credenciales = json_decode(file_get_contents('php://input'), true);
-			// 	$resultado = $servicioTrasporte->login_de_usuario($credenciales);
-			// 	break;
+			case 'login_de_usuario':
+				$credenciales = json_decode(file_get_contents('php://input'), true);
+				$resultado = $servicioTrasporte->login_de_usuario($credenciales);
+				break;
 			default:
 				$resultado = 'method con valor desconocido';
 				break;
