@@ -1,13 +1,13 @@
 <?php
 
 class Usuario{
-    private $id;
-    private $nombre;
-    private $direccion;
-    private $latitud;
-    private $longitud;
-    private $barrio;
-    private $comuna;
+    private int $id;
+    private string $nombre;
+    private string $direccion;
+    private float $latitud;
+    private float $longitud;
+    private string $barrio;
+    private string $comuna;
     
     public function __construct($id, $nombre, $direccion, $latitud, $longitud, $barrio, $comuna){
         $this->id = $id;
@@ -15,8 +15,8 @@ class Usuario{
         $this->direccion = $direccion;
         $this->latitud = $latitud;
         $this->longitud = $longitud;
-        $this->barrio = $barrio;
-        $this->comuna = $comuna;
+        $this->barrio = $barrio == null ? '' : $barrio;
+        $this->comuna = $comuna == null ? '' : $comuna;
     }
 
     public function getId(){

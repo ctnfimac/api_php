@@ -1,4 +1,6 @@
 <?php
+header('Content-type: application/json; charset=utf8');
+header("Access-Control-Allow-Origin: *");
 
 class Model extends Conexion{
     private $matriz = array();
@@ -110,39 +112,39 @@ class Model extends Conexion{
 	}
 
     public function convertirAJson($tabla){
-		$respuesta = ['data' =>[]];
+		$respuesta = [];
 		// armo el array para poder convertirlo a json
 		foreach($tabla as $row){
             switch ($this->modelo) {
                  case 'Servicio':
-			        array_push($respuesta['data'],array('id' => $row->getId(), 'titulo'=> $row->getTitulo(),'descripcion'=> $row->getDescripcion(),'icono'=> $row->getIcono()));
+			        array_push($respuesta,array('id' => $row->getId(), 'titulo'=> $row->getTitulo(),'descripcion'=> $row->getDescripcion(),'icono'=> $row->getIcono()));
                     break;
                  case 'Banner':
-			        array_push($respuesta['data'],array('id' => $row->getId(), 'titulo'=> $row->getTitulo(),'subtitulo'=> $row->getSubtitulo(),'boton_text'=> $row->getBotonText()));
+			        array_push($respuesta,array('id' => $row->getId(), 'titulo'=> $row->getTitulo(),'subtitulo'=> $row->getSubtitulo(),'boton_text'=> $row->getBotonText()));
                     break;
                  case 'Articulo':
-			        array_push($respuesta['data'],array('id' => $row->getId(), 'titulo'=> $row->getTitulo(),'imagen_url'=> $row->getImagenUrl()));
+			        array_push($respuesta,array('id' => $row->getId(), 'titulo'=> $row->getTitulo(),'imagen_url'=> $row->getImagenUrl()));
                     break;
                  case 'Portfolio':
-			        array_push($respuesta['data'],array('id' => $row->getId(), 'titulo'=> $row->getTitulo(),'descripcion'=> $row->getDescripcion(),'imagen_url'=> $row->getImagenUrl(),'web_url'=> $row->getWebUrl()));
+			        array_push($respuesta,array('id' => $row->getId(), 'titulo'=> $row->getTitulo(),'descripcion'=> $row->getDescripcion(),'imagen_url'=> $row->getImagenUrl(),'web_url'=> $row->getWebUrl()));
                     break;
                  case 'Tecnologia':
-			        array_push($respuesta['data'],array('id' => $row->getId(), 'nombre'=> $row->getNombre(),'porcentaje'=> $row->getPorcentaje()));
+			        array_push($respuesta,array('id' => $row->getId(), 'nombre'=> $row->getNombre(),'porcentaje'=> $row->getPorcentaje()));
                     break;
                  case 'Categoria':
-			        array_push($respuesta['data'],array('id' => $row->getId(), 'titulo'=> $row->getTitulo(),
+			        array_push($respuesta,array('id' => $row->getId(), 'titulo'=> $row->getTitulo(),
                         'precio'=> $row->getPrecio(),'responsive'=> $row->getResponsive(),'red_social'=> $row->getRedSocial(),
                         'formulario'=> $row->getFormulario(),'imagenes'=> $row->getImagenes(),'secciones'=> $row->getSecciones(),
                     ));
                     break;
                  case 'Contacto':
-			        array_push($respuesta['data'],array('id' => $row->getId(), 'descripcion'=> $row->getDescripcion(),'icono'=> $row->getIcono()));
+			        array_push($respuesta,array('id' => $row->getId(), 'descripcion'=> $row->getDescripcion(),'icono'=> $row->getIcono()));
                     break;
                  case 'Redsocial':
-			        array_push($respuesta['data'],array('id' => $row->getId(), 'titulo'=> $row->getTitulo(),'icono'=> $row->getIcono(),'web_url'=> $row->getWebUrl()));
+			        array_push($respuesta,array('id' => $row->getId(), 'titulo'=> $row->getTitulo(),'icono'=> $row->getIcono(),'web_url'=> $row->getWebUrl()));
                     break;
                  case 'Usuario':
-			        array_push($respuesta['data'],array('id' => $row->getId(), 'nombre'=> $row->getNombre(),'direccion'=> $row->getDireccion(),'latitud'=> $row->getLatitud(),'longitud'=> $row->getLongitud(),'barrio'=> $row->getBarrio(),'comuna'=> $row->getComuna()));
+			        array_push($respuesta,array('id' => $row->getId(), 'nombre'=> $row->getNombre(),'direccion'=> $row->getDireccion(),'latitud'=> $row->getLatitud(),'longitud'=> $row->getLongitud(),'barrio'=> $row->getBarrio(),'comuna'=> $row->getComuna()));
                     break;
                  default:
                     echo 'Error al convertir en Json';

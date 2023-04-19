@@ -9,8 +9,10 @@ class Autoload{
 			$controller_path = './controller/' .$class_name . '.php';
 			$modelapi_path = './model/api/' .$class_name . '.php';
 			$modelapiclases_path = './model/api/clases/' .$class_name . '.php';
-			
+
 			$modelapitransporteclases_path = './model/api/clasesTransporte/' .$class_name . '.php';
+			$services_path = './services/' . $class_name . '.php';
+
 
 			if(file_exists($model_path)) require_once($model_path);
 			if(file_exists($controller_path)) require_once($controller_path);
@@ -18,6 +20,7 @@ class Autoload{
 			if(file_exists($modelapiclases_path)) require_once($modelapiclases_path);
 			
 			if(file_exists($modelapitransporteclases_path)) require_once($modelapitransporteclases_path);
+			if(file_exists($services_path)) require_once($services_path);
 		});
 	}
 }
