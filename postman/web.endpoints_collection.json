@@ -1,0 +1,1213 @@
+{
+	"info": {
+		"_postman_id": "558e1c7f-0e2c-4316-b873-08ace61de504",
+		"name": "web",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://0.0.0.0:8082/index.php?route=api&model=banner",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=banner",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "banner"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/index.php?route=api&model=servicio",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=servicio",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "servicio"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/index.php?route=api&model=articulo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=articulo",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "articulo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/index.php?route=api&model=portfolio",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=portfolio",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "portfolio"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/index.php?route=api&model=tecnologia",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=tecnologia",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "tecnologia"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/index.php?route=api&model=categoria",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=categoria",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "categoria"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/index.php?route=api&model=contacto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=contacto",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "contacto"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/index.php?route=api&model=redsocial",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=redsocial",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "redsocial"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/index.php?route=api&id=1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&&model=portfolio&id=1",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": null,
+							"value": null
+						},
+						{
+							"key": "model",
+							"value": "portfolio"
+						},
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Ruco\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_web}}index.php?route=api",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/web_christian",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"titulo\": \"Titulo de prueba\",\n    \"subtitulo\": \"SubTitulo de prueba\",\n    \"boton_text\": \"boton_text de prueba\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=banner",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "banner"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/web_christian servicio",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"titulo\": \"test\",\n    \"descripcion\": \"test3\",\n    \"icono\": \"test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=servicio",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "servicio"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/web_christian articulo",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"titulo\": \"Sitios Web Adaptables a Todos los Dispositivos\",\n    \"imagen_url\": \"/media/images/articulo.png\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=articulo",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "articulo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/web_christian portfolio",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"titulo\": \"NO VIOLENCIA BS\",\n    \"descripcion\": \"Fundación de la no violencia en buenos aires\",\n    \"imagen_url\": \"/media/images/noviolencia_bsas.png\",\n    \"web_url\": \"http://noviolenciabuenosaires.christianperalta.com/\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=portfolio",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "portfolio"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/web_christian tecnologia",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"dasdingo\",\n    \"porcentaje\": 45\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=tecnologia",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "tecnologia"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/web_christian contacto",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"descripcion\": \"ble\",\n    \"icono\": \"/il.png\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=contacto",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "contacto"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/web_christian redsocial",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"titulo\": \"linkedinrwer\",\n    \"icono\": \"/media/images/redsocial/linkedin.png\",\n    \"web_url\": \"https://www.linkedin.com/in/christianperalta87/\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=redsocial",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "redsocial"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/web_christian categoria",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"titulo\": \"Premium Maestro\",\n    \"precio\": 150,\n    \"responsive\": \"t\",\n    \"red_social\": \"t\",\n    \"formulario\": \"t\",\n    \"imagenes\": 12,\n    \"secciones\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=categoria",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "categoria"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/index.php?id=2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Ogro Ruco\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&id=7",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "id",
+							"value": "7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/ web_christian",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"titulo\": \"Titulo de prueba modificado\",\n    \"subtitulo\": \"SubTitulo de prueba modificado 2\",\n    \"boton_text\": \"blaaaaaaa\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=banner&id=2",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "banner"
+						},
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/ web_christian servicio",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"titulo\": \"test nuevo\",\n    \"descripcion\": \"descripcion nueva\",\n    \"icono\": \"icono nuevo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=servicio&id=8",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "servicio"
+						},
+						{
+							"key": "id",
+							"value": "8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/ web_christian articulo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"titulo\": \"Sitios Web Adaptables a Todos los EDITADO\",\n    \"imagen_url\": \"/media/images/EDITADO.png\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=articulo&id=2",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "articulo"
+						},
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/ web_christian portfolio",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"titulo\": \"NO VIOLENCIAedit\",\n    \"descripcion\": \"Fundación de la no violencia en buenos aires\",\n    \"imagen_url\": \"/media/images/edit.png\",\n    \"web_url\": \"http://noviolenciabuenosaires.christianperalta.com/\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=portfolio&id=1",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "portfolio"
+						},
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/ web_christian tecnologia",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"java\",\n    \"porcentaje\": 80\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=tecnologia&id=1",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "tecnologia"
+						},
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/ web_christian contacto",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"descripcion\": \"15-6187-0920\",\n    \"icono\": \"/media/images/contacto/wp.png\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=contacto&id=3",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "contacto"
+						},
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/ web_christian redsocial",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"titulo\": \"linkedin original\",\n    \"icono\": \"/media/images/redsocial/linkedin.jpg\",\n    \"web_url\": \"https://www.linkedin.com/in/christianperalta87/\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=redsocial&id=3",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "redsocial"
+						},
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/ web_christian categoria",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"titulo\": \"Premium\",\n    \"precio\": 1000,\n    \"responsive\": \"t\",\n    \"red_social\": \"t\",\n    \"formulario\": \"t\",\n    \"imagenes\": 12,\n    \"secciones\": 5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=categoria&id=2",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "categoria"
+						},
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/index.php?id=2 Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 3,\n    \"nombre\": \"Christian\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=banner&id=2",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "banner"
+						},
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/ web_christian",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 3,\n    \"nombre\": \"Christian\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=servicio&id=9",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "servicio"
+						},
+						{
+							"key": "id",
+							"value": "9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/ web_christian articulo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 3,\n    \"nombre\": \"Christian\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=articulo&id=2",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "articulo"
+						},
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/ web_christian portfolio",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 3,\n    \"nombre\": \"Christian\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=portfolio&id=1",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "portfolio"
+						},
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/ web_christian tecnologia",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 3,\n    \"nombre\": \"Christian\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=tecnologia&id=3",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "tecnologia"
+						},
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/ web_christian contacto",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 3,\n    \"nombre\": \"Christian\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=contacto&id=2",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "contacto"
+						},
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/ web_christian redsocial",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 3,\n    \"nombre\": \"Christian\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=redsocial&id=2",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "redsocial"
+						},
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8082/ web_christian categoria",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 3,\n    \"nombre\": \"Christian\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_web}}index.php?route=api&model=categoria&id=2",
+					"host": [
+						"{{server_web}}index",
+						"php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api"
+						},
+						{
+							"key": "model",
+							"value": "categoria"
+						},
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
