@@ -1,13 +1,13 @@
 <?php
 
 class Usuario{
-    private int $id;
-    private string $nombre;
-    private string $direccion;
-    private float $latitud;
-    private float $longitud;
-    private string $barrio;
-    private string $comuna;
+    private $id;
+    private $nombre;
+    private $direccion;
+    private $latitud;
+    private $longitud;
+    private $barrio;
+    private $comuna;
     
     public function __construct($id, $nombre, $direccion, $latitud, $longitud, $barrio, $comuna){
         $this->id = $id;
@@ -20,7 +20,7 @@ class Usuario{
     }
 
     public function getId(){
-        return $this->id;
+        return intval($this->id);
     }
 
     public function getNombre(){
@@ -32,11 +32,11 @@ class Usuario{
     }
 
     public function getLatitud(){
-        return $this->latitud;
+        return floatval($this->latitud);
     }
 
     public function getLongitud(){
-        return $this->longitud;
+        return floatval($this->longitud);
     }
 
     public function getBarrio(){
